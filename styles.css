@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    color: #243e63;
+}
+
+.container {
+    padding: 80px 0;
+}
+
+.row {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+nav {
+    background: url('/finalProjectAssets/finalProjectAssets/Adobe\ Express\ -\ file\ \(3\).png');
+    background-attachment:fixed;
+    background-repeat: no-repeat;
+    background-size: cover; 
+
+}
+
+.nav__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.nav__logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+}
+
+.nav__logo--img {
+  width: 100%;  
+  max-width: 256px;
+  max-height: 256px;
+  filter: invert(1);
+}
+
+.nav__links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-right: 8px;
+}
+
+.nav__link {
+    font-size: 20px;
+    margin-right: 24px;
+    color: #ddd9d9;
+}
+
+.nav__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    max-height: 48px;
+    min-height: 48px;
+    padding: 12px 40px;
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 50px;
+}
+
+.search__menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.search__title {
+    font-size: 32px;
+    color: rgb(94, 191, 83);
+    margin-bottom: 24px;
+}
+
+.search__input--wrapper {
+    width: 100%;
+    max-width: 600px;
+    position: relative;
+    border-radius: 50px;
+    overflow: hidden;
+    margin-bottom: 24px;
+}
+
+.search__input {
+    color: rgba(0, 0, 0, 0.87);
+    width: 100%;
+    max-width: 800px;
+    height: 60px;
+    font-size: 20px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.fa-magnifying-glass {
+    position: absolute;
+    color: red;
+
+}
+
+#search__results {
+
+    background: #242424;
+}
