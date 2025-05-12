@@ -21,15 +21,15 @@ async function main() {
     (album) => `<div class="music__card">
      <figure class="music__img--wrapper">
      <img
-        src=
+        src="${albumData.results.albummatches.album.url}"
         alt=""
         class="album__cover"
      />
      </figure>
      <div class="album__title">
-      Album: <span class="album"></span></div>
+      Album: <span class="album">${albumData.results.albummatches.album.name}</span></div>
      <div class="artist__name">
-      Artist: <span class="artist"></span>
+      Artist: <span class="artist">${albumData.results.albummatches.album.artist}</span>
      </div>
     </div>`
   );
