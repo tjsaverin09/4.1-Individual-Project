@@ -45,7 +45,9 @@
               placeholder="Look up Artist, Song, or Album..."
               class="search__input"
             />
-            <i class="fa-regular fa-magnifying-glass"></i>
+            <div class="search-wrapper">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
           </div>
         </div>
       </nav>
@@ -57,14 +59,16 @@
             <h2 class="result__title">Search Results</h2>
             <div class="music__list">
               <div class="music__card">
-                <figure class="music__img--wrapper">
+                <figure class="album-cover__wrapper">
                   <img
                     src="https://lastfm.freetls.fastly.net/i/u/174s/710d5f1abe58c7a83492a86d0235d2b9.png"
                     alt=""
-                    class="album__cover"
+                    class="album-cover"
                   />
                 </figure>
-                <div class="album__title">Album: <span class="album"></span></div>
+                <div class="album__title">
+                  Album: <span class="album"></span>
+                </div>
                 <div class="artist__name">
                   Artist: <span class="artist">Kid Cudi</span>
                 </div>

@@ -19,11 +19,11 @@ async function main() {
 
   musicListEl.innerHTML = albumData.results.albummatches.album.map(
     (album) => `<div class="music__card">
-     <figure class="music__img--wrapper">
+     <figure class="album-cover--wrapper">
      <img
-        src="${album.image[1]}"
+        src="${album.image[3]['#text']}"
         alt=""
-        class="album__cover"
+        class="album-cover"
      />
      </figure>
      <div class="album__title">
