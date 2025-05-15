@@ -118,6 +118,7 @@ nav {
     right: 5%;
     top: 20px;
     z-index: 10000;
+    padding: 0 20px 0 8px;
 }
 
 .fa-magnifying-glass {
@@ -137,6 +138,7 @@ nav {
 }
 
 .result__title {
+    font-family: 'gluten';
     text-align: center;
     display: flex;
     align-items: center;

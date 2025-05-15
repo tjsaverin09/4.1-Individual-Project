@@ -44,6 +44,7 @@
               type="text"
               placeholder="Look up Artist, Song, or Album..."
               class="search__input"
+              id="searchId"
             />
             <div class="search__icon--wrapper">
               <i class="fa-solid fa-magnifying-glass"></i>
@@ -56,10 +57,10 @@
       <div class="container">
         <div class="row">
           <div class="result__header">
-            <h2 class="result__title">Search Results</h2>
+            <h2 class="result__title">Groove On!</h2>
             <div class="music__list">
               <div class="music__card">
-                <figure class="album-cover__wrapper">
+                <figure class="album-cover__wrapper" onclick="getResults()">
                   <img
                     src="https://lastfm.freetls.fastly.net/i/u/174s/710d5f1abe58c7a83492a86d0235d2b9.png"
                     alt=""

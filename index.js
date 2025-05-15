@@ -97,8 +97,9 @@ async function main() {
 
 main();
 
-// async function searchResults() {
-//   try {
+async function getResults() {
+const id = document.getElementById("searchId").value;
 
-//   }
-// }
+const res = await fetch('https://ws.audioscrobbler.com/2.0/?method=album.search&album=&api_key=01a9bc49bbc9abed2dd1966234ac875e&format=json')
+
+}
