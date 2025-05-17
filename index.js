@@ -37,10 +37,10 @@
 
 // main();
 
-async function main() {
+async function main(searchTerm) {
   try {
     const albums = await fetch(
-      "https://ws.audioscrobbler.com/2.0/?method=album.search&album=moon&api_key=01a9bc49bbc9abed2dd1966234ac875e&format=json"
+      `https://ws.audioscrobbler.com/2.0/?method=album.search&album=${searchTerm}&api_key=01a9bc49bbc9abed2dd1966234ac875e&format=json`
     );
     const albumData = await albums.json();
     const musicListEl = document.querySelector(".music__list");
@@ -81,7 +81,7 @@ async function main() {
         musicListEl.appendChild(albumCard);
       });
 
-      // console.logAdded ${albumData.results.albummatches.album.length} album cards to the page);
+      console.log(`Added ${albumData.results.albummatches.album.length} album cards to the page`);
     } else {
       musicListEl.innerHTML = '<div class="no-results">No albums found</div>';
 
@@ -95,11 +95,12 @@ async function main() {
   }
 }
 
-main();
+function handleSearchChange(event) {
+  console.log(event.target.value)
+  const searchInput = event.target.value
+  main(searchInput)
+}
 
-async function getResults() {
-const id = document.getElementById("searchId").value;
-
-const res = await fetch('https://ws.audioscrobbler.com/2.0/?method=album.search&album=&api_key=01a9bc49bbc9abed2dd1966234ac875e&format=json')
-
+function filterAlbums(event) {
+   console.log(event.target.value)
 }

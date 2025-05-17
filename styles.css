@@ -124,7 +124,7 @@ nav {
 .fa-magnifying-glass {
     width: 1em;
     height: 1em;
-    font-size: 20px;
+    font-size: 24px;
     color: maroon;
     transition: all 0.3s ease;
 }
@@ -135,6 +135,20 @@ nav {
 
 #search__results {
     background: #242424;
+}
+
+.result__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.result__filter {
+    margin-bottom: 56px;
+}
+
+#filter {
+    border-radius: 10px;
 }
 
 .result__title {

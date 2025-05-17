@@ -42,9 +42,10 @@
           <div class="search__input--wrapper">
             <input
               type="text"
-              placeholder="Look up Artist, Song, or Album..."
+              placeholder="Look up Artist or Album..."
               class="search__input"
               id="searchId"
+              onchange="handleSearchChange(event)"
             />
             <div class="search__icon--wrapper">
               <i class="fa-solid fa-magnifying-glass"></i>
@@ -58,24 +59,17 @@
         <div class="row">
           <div class="result__header">
             <h2 class="result__title">Groove On!</h2>
-            <div class="music__list">
-              <div class="music__card">
-                <figure class="album-cover__wrapper" onclick="getResults()">
-                  <img
-                    src="https://lastfm.freetls.fastly.net/i/u/174s/710d5f1abe58c7a83492a86d0235d2b9.png"
-                    alt=""
-                    class="album-cover"
-                  />
-                </figure>
-                <div class="album__title">
-                  Album: <span class="album"></span>
-                </div>
-                <div class="artist__name">
-                  Artist: <span class="artist">Kid Cudi</span>
-                </div>
-              </div>
-            </div>
+            <label for="filter" class="result__filter">Find alphabetically:
+              <select id="filter" onchange="filterAlbums(event)">
+                <option value="" disabled selected>Sort:</option>
+                <option value="A-Z">A-Z</option>
+                <option value="Z-A">Z-A</option>
+              </select>
+            </label>
           </div>
+            <div class="music__list">
+              <i class="fa-solid fa-spinner books__loading--spinner"></i>
+            </div>
         </div>
       </div>
     </section>
