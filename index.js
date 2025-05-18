@@ -101,6 +101,26 @@ function handleSearchChange(event) {
   main(searchInput)
 }
 
+// function filterAlbums(event) {
+//    console.log(event.target.value)
+// }
+
+// filterAlbums()
+
 function filterAlbums(event) {
-   console.log(event.target.value)
+  const sortOrder = event.target.value;
+  const musicListEl = document.querySelector(".music__list");
+  const albumCards = Array.from(musicListEl.querySelectorAll(".music__card"));
+  
+  if (albumCards.length) {
+    albumCards.sort((a, b) => {
+      const albumA = a.querySelector(".album").textContent.toLowerCase();
+      const albumB = b.querySelector(".album").textContent.toLowerCase();
+      return sortOrder === "A-Z" ? albumA.localeCompare(albumB) : albumB.localeCompare(albumA);
+    });
+    
+     
+    musicListEl.innerHTML = "";
+    albumCards.forEach(card => musicListEl.appendChild(card));
+  }
 }
