@@ -22,6 +22,12 @@ a {
     text-decoration: none;
 }
 
+/*
+
+NAV
+
+*/
+
 nav {
     background: url('/finalProjectAssets/finalProjectAssets/Adobe\ Express\ -\ file\ \(3\).png');
     background-attachment:fixed;
@@ -181,6 +187,17 @@ nav {
     letter-spacing: 0.5px;
 }
 
+.hidden {
+    display: none;
+}
+
+.no-results,
+.error-message {
+    font-family: gluten;
+    font-size: 20px;
+    letter-spacing: 0.5px;
+}
+
 .music__list {
     display: flex;
     flex-wrap: wrap;
@@ -199,8 +216,8 @@ nav {
     display: none !important;
 }
 
-.music__loading .music__loading--spinner {
-    display: block;
+.loading {
+    display: block !important;
 }
 
 .fa-spinner {
@@ -218,7 +235,7 @@ nav {
 }
 
 .music__card {
-    width: 200px;/* might change to 300px or to fit the music__card */
+    width: 200px;
     background-color: #fff;
     border-radius: 8px;
     overflow: hidden;
@@ -257,4 +274,15 @@ nav {
 .album,
 .artist {
     font-weight: 700;
+}
+
+/*
+
+SMALL PHONES
+
+*/
+@media (max-width: 576px) {
+    .nav__link {
+        visibility: hidden;
+    }
 }

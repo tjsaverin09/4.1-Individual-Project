@@ -1,13 +1,3 @@
-// const albumRef = document.querySelector(".album")
-
-// async function filterAlbum() {
-//     const response = await fetch('https://ws.audioscrobbler.com/2.0/?method=album.search&album=moon&api_key=01a9bc49bbc9abed2dd1966234ac875e&format=json');
-//     const data = await response .json()
-//     console.log(data);
-//     albumRef.innerHTML = data.album
-// }
-
-// filterAlbum()
 
 // async function main() {
 //   const albums = await fetch(
@@ -36,33 +26,35 @@
 // }
 
 // main();
+const spinner = document.querySelector(".music__loading--spinner")
+const resultPara = document.querySelector(".result__para")
+const musicListEl = document.querySelector(".music__list");
 
 async function main(searchTerm) {
   try {
+    spinner.classList.add("loading")
+    resultPara.classList.remove("hidden")
+    musicListEl.innerHTML = "";
     const albums = await fetch(
       `https://ws.audioscrobbler.com/2.0/?method=album.search&album=${searchTerm}&api_key=01a9bc49bbc9abed2dd1966234ac875e&format=json`
     );
     const albumData = await albums.json();
-    const musicListEl = document.querySelector(".music__list");
     console.log("Album Data Structure:", albumData);
 
-    // Check if we have albums to display
     if (
       albumData.results &&
       albumData.results.albummatches &&
       albumData.results.albummatches.album &&
       albumData.results.albummatches.album.length > 0
     ) {
-      // Clear existing content
-      musicListEl.innerHTML = "";
+      resultPara.classList.add("hidden")
 
-      // Create HTML for each album
       albumData.results.albummatches.album.forEach((album) => {
-        // Verify image array exists and has elements
+
         const imageUrl =
           album.image && album.image.length > 2
-            ? album.image[2]["#text"] // Medium size image (index 2)
-            : "https://lastfm.freetls.fastly.net/i/u/174s/c6f59c1e5e7240a4c0d427abd71f3dbb.png"; // Default image
+            ? album.image[2]["#text"]
+            : "https://lastfm.freetls.fastly.net/i/u/174s/c6f59c1e5e7240a4c0d427abd71f3dbb.png"; 
         const albumCard = document.createElement("div");
         albumCard.className = "music__card";
         albumCard.innerHTML = `
@@ -93,6 +85,7 @@ async function main(searchTerm) {
     document.querySelector(".music__list").innerHTML =
       '<div class="error-message">Failed to load albums. Please try again later.</div>';
   }
+  spinner.classList.remove("loading")
 }
 
 function handleSearchChange(event) {
@@ -101,11 +94,6 @@ function handleSearchChange(event) {
   main(searchInput)
 }
 
-// function filterAlbums(event) {
-//    console.log(event.target.value)
-// }
-
-// filterAlbums()
 
 function filterAlbums(event) {
   const sortOrder = event.target.value;
